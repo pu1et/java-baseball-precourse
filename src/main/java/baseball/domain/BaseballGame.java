@@ -62,7 +62,9 @@ public class BaseballGame {
     }
 
     private int isBallIdx(int strikeResult, int idx) {
-        if (strikeResult == 1) return 0;
+        if (strikeResult == 1) {
+            return 0;
+        }
         if (targetNumber.contains(String.valueOf(userNumber.charAt(idx)))) {
             return 1;
         }
@@ -70,7 +72,7 @@ public class BaseballGame {
     }
 
     private void setIsNothing() {
-        if (strike == 0 && ball == 0){
+        if (strike == 0 && ball == 0) {
             isNothing = true;
         }
     }
