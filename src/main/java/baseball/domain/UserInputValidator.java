@@ -23,6 +23,9 @@ public class UserInputValidator {
         if (!isValidNumber()) {
             return false;
         }
+        if (!isDuplicated()) {
+            return false;
+        }
         return true;
     }
 
@@ -32,5 +35,18 @@ public class UserInputValidator {
 
     private boolean isValidNumber() {
         return Pattern.matches("^[1-9]*$", userInput);
+    }
+
+    private boolean isDuplicated() {
+        if (userInput.charAt(0) == userInput.charAt(1)) {
+            return false;
+        }
+        if (userInput.charAt(1) == userInput.charAt(2)) {
+            return false;
+        }
+        if (userInput.charAt(0) == userInput.charAt(2)) {
+            return false;
+        }
+        return true;
     }
 }
